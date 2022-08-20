@@ -1,0 +1,18 @@
+:root {
+  --white: #fbfbff;
+  --black: #181827;
+
+  --text: #484554;
+  --textSecondary: #646381;
+  --border: #ebebf5;
+  --primary: #4958df;
+  --focus: #4958df80;
+  --background: var(--white);
+  --backgroundSecondary: #f2f2f7;
+  --pink: #d6337f;
+  --green: #29ab6a;
+  --blue: #1379ed;
+  --orange: #f19f07;
+  --darkOrange: #ec8601;
+  --red: #ed153d;
+}

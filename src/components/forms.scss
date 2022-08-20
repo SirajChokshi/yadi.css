@@ -1,0 +1,85 @@
+input,
+textarea,
+select {
+  background: var(--backgroundSecondary);
+  border: 1px solid var(--border);
+  color: var(--text);
+
+  padding: 0.5rem;
+  border-radius: $radius-sm;
+
+  font-size: 1rem;
+  font-family: $fonts-sans-serif;
+
+  &::placeholder {
+    color: var(--textSecondary);
+  }
+
+  &[type="submit"],
+  &[type="reset"],
+  &[type="button"] {
+    @include button;
+  }
+
+  transition: all 0.12s cubic-bezier(0.2, 0, 0, 1);
+
+  &:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--focus);
+  }
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  padding: 0.25rem 1rem;
+  margin: 0;
+  width: 100%;
+  cursor: inherit;
+  line-height: inherit;
+
+  &[multiple] {
+    height: auto;
+    padding: 0;
+
+    option {
+      padding: 0.5rem 1rem;
+
+      &:checked,
+      &:active {
+        background: var(--primary);
+        color: var(--text);
+      }
+
+      &:hover {
+        background: var(--focus);
+        color: var(--text);
+      }
+    }
+  }
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  color: var(--text);
+
+  padding: 0.5rem;
+  border-radius: $radius-sm;
+
+  margin-bottom: 1rem;
+
+  legend {
+    color: var(--textSecondary);
+    padding: 0 0.5rem;
+  }
+}
+
+*:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

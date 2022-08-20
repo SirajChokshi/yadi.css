@@ -1,0 +1,26 @@
+@mixin card {
+  background: var(--backgroundSecondary);
+  border-radius: $radius-sm;
+  border: 1px solid var(--border);
+}
+
+@mixin button {
+  @include card;
+
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: $radius-sm;
+  border-color: var(--primary);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: $fonts-sans-serif;
+  cursor: pointer;
+
+  transition: all 0.12s cubic-bezier(0.2, 0, 0, 1);
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--focus);
+  }
+}

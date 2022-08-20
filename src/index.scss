@@ -1,0 +1,17 @@
+// utils
+@import "utils/vars.scss";
+@import "utils/mixins.scss";
+
+// public imports
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=PT+Mono&display=swap");
+@import url("./public/light.css");
+@import url("./public/dark.css") (prefers-color-scheme: dark);
+
+// core
+@import "core/main.scss";
+@import "core/text.scss";
+
+// components
+@import "components/button.scss";
+@import "components/table.scss";
+@import "components/forms.scss";
