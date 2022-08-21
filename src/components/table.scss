@@ -3,7 +3,7 @@ table {
   border-collapse: separate;
   border-left: 0;
   border-radius: $radius-sm;
-  border-spacing: 0px;
+  border-spacing: 0;
   width: 100%;
   margin: 2rem 0;
 
@@ -12,19 +12,6 @@ table {
     font-size: 1.125rem;
     font-weight: bold;
     text-align: left;
-  }
-
-  thead {
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-    border-collapse: separate;
-  }
-
-  tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
   }
 
   th,
