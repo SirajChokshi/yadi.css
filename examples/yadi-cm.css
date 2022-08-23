@@ -1,0 +1,132 @@
+/* yadi theme for codemirror */
+
+.cm-s-yadi .cm-keyword {
+  color: #bb7dbf;
+  text-shadow: 0px 0px 15px var(--focus);
+}
+.cm-s-yadi .cm-atom {
+  color: var(--prink);
+}
+.cm-s-yadi .cm-number {
+  color: var(--green);
+}
+.cm-s-yadi .cm-def {
+  color: var(--textSecondary);
+}
+.cm-s-yadi .cm-variable {
+  color: var(--text);
+}
+.cm-s-yadi .cm-variable-2 {
+  color: var(--blue);
+}
+.cm-s-yadi .cm-variable-3 {
+  color: var(--green);
+}
+.cm-s-yadi .cm-property {
+  color: var(--orange);
+}
+.cm-s-yadi .cm-operator {
+  color: var(--red);
+}
+.cm-s-yadi .cm-comment {
+  font-weight: bold;
+  font-style: italic;
+  color: var(--textSecondary);
+}
+.cm-s-yadi .cm-string {
+  color: var(--orange);
+}
+.cm-s-yadi .cm-string-2 {
+  font-style: italic;
+  color: var(--orange);
+}
+.cm-s-yadi .cm-meta {
+  color: var(--orange);
+}
+.cm-s-yadi .cm-error {
+  color: var(--textSecondary);
+}
+.cm-s-yadi .cm-qualifier {
+  color: yellow;
+}
+.cm-s-yadi .cm-builtin {
+  color: #9999cc;
+}
+.cm-s-yadi .cm-bracket {
+  border-bottom: 1px solid var(--green);
+  z-index: 100;
+}
+.cm-s-yadi .cm-tag {
+  color: var(--red);
+}
+.cm-s-yadi .cm-attribute {
+  color: var(--orange);
+}
+.cm-s-yadi .cm-header {
+  font-weight: bold;
+  color: var(--green);
+}
+.cm-s-yadi .cm-quote {
+  color: var(--green);
+}
+.cm-s-yadi .cm-hr {
+  color: var(--pink);
+}
+.cm-s-yadi .cm-link {
+  text-decoration: underline;
+  color: var(--primary);
+}
+.cm-s-yadi .cm-special {
+  color: var(--orange);
+}
+
+.cm-s-yadi .CodeMirror-matchingbracket {
+  color: var(--green);
+}
+.cm-s-yadi .CodeMirror-nonmatchingbracket {
+  color: var(--red);
+}
+
+.cm-s-yadi .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.15);
+}
+.cm-s-yadi .CodeMirror-focused .CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Editor styling */
+
+.cm-s-yadi.CodeMirror {
+  background-color: var(--backgroundSecondary);
+  color: var(--text);
+}
+
+.cm-s-yadi .CodeMirror-gutters {
+  background: var(--background);
+  border-right: 1px solid var(--border);
+}
+
+.cm-s-yadi .CodeMirror-linenumber {
+  color: var(--textSecondary);
+  padding: 0 5px;
+}
+
+.cm-s-yadi .CodeMirror-lines .CodeMirror-cursor {
+  border-left: 1px solid var(--text);
+}
+
+.cm-s-yadi .CodeMirror-activeline-background {
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.031);
+}
+
+.CodeMirror-hints {
+  background: var(--background) !important;
+}
+
+.CodeMirror-hint {
+  color: var(--text) !important;
+}
+
+.CodeMirror-hint-active {
+  background: var(--primary) !important;
+}

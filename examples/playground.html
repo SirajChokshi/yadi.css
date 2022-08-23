@@ -1,0 +1,116 @@
+<link href="../dist/index.css" rel="stylesheet" ></link>
+<link href="./yadi-cm.css" rel="stylesheet" ></link>
+
+
+<link rel="stylesheet" href="http://esironal.github.io/cmtouch/lib/codemirror.css">
+<link rel="stylesheet" href="http://esironal.github.io/cmtouch/addon/hint/show-hint.css">
+<script src="http://esironal.github.io/cmtouch/lib/codemirror.js"></script>
+<script src="http://esironal.github.io/cmtouch/addon/hint/show-hint.js"></script>
+<script src="http://esironal.github.io/cmtouch/addon/hint/xml-hint.js"></script>
+<script src="http://esironal.github.io/cmtouch/addon/hint/html-hint.js"></script>
+<script src="http://esironal.github.io/cmtouch/mode/xml/xml.js"></script>
+<script src="http://esironal.github.io/cmtouch/mode/javascript/javascript.js"></script>
+<script src="http://esironal.github.io/cmtouch/mode/css/css.js"></script>
+<script src="http://esironal.github.io/cmtouch/mode/htmlmixed/htmlmixed.js"></script>
+<script src="http://esironal.github.io/cmtouch/addon/selection/active-line.js"></script>
+<script src="http://esironal.github.io/cmtouch/addon/edit/matchbrackets.js"></script>
+
+<style>
+  .CodeMirror-wrap {
+    border-right: 1px solid var(--border);
+    height: 100%;
+  }
+
+  .split {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    grid-template-columns: max(40vw, 400px) 1fr; 
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 'a a' 'b c';
+  }
+
+  header {
+    grid-area: a;
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  #editor {
+    grid-area: b;
+  }
+
+  #preview {
+    border: none;
+    grid-area: c;
+    width: 100%;
+    min-height: 100%;
+  }
+</style>
+
+<div class="split">
+  <header>
+    <a href="./kitchen-sink.html">Kitchen Sink</a>&nbsp; | &nbsp; Playground
+  </header>
+  <div id="editor"></div>
+  <iframe id="preview"></iframe>
+</div>
+
+<script defer type="text/javascript">
+  CodeMirror.commands.autocomplete = function(cm) {
+    CodeMirror.showHint(cm, CodeMirror.hint.html);
+  }
+
+  const $previewFrame = document.getElementById('preview')
+  const ifrm = $previewFrame.contentWindow || $previewFrame.contentDocument.document || $previewFrame.contentDocument;
+
+  const yadiLink = createLink('../dist/index.css')
+
+  window.onload = function() {
+    editor = CodeMirror(document.getElementById("editor"), {
+      mode: "text/html",
+      theme: "yadi",
+      lineWrapping: true,
+      lineNumbers: true,
+      styleActiveLine: true,
+      matchBrackets: true,
+
+      extraKeys: {
+        "Ctrl-Space": "autocomplete"
+      },
+      value: "<h1>Hello World!</h1>"
+    });
+
+    ifrm.document.head.appendChild(yadiLink);
+
+    paintPreview()
+
+
+    editor.on('change', paintPreview)
+  };
+
+  function paintPreview() {
+    ifrm.document.open();      
+    ifrm.document.write(editor.getValue())
+    ifrm.document.close();
+  }
+
+
+  function createLink(path) {
+    let link = document.createElement("link");
+    link.href = path;
+    link.rel = "stylesheet"; 
+    link.type = "text/css"; 
+
+    return link
+  }
+</script>
