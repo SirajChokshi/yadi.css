@@ -10,12 +10,11 @@
   --text: var(--white);
   --textSecondary: #b0b0bf;
 
-  /* TODO - move these into a prism-specific extension */
-  /* --pink: #f2529c;
+  --pink: #f2529c;
   --green: #19e6b6;
   --blue: #60a7fa;
   --orange: #ffb026;
-  --red: #ed5858; */
+  --red: #ed5858;
 }
 
 * {
