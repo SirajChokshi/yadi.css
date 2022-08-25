@@ -1,7 +1,11 @@
 {
-  "name": "yadi",
+  "name": "yadi.css",
   "version": "0.0.1",
   "source": "src/index.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirajChokshi/yadi.css.git"
+  },
   "license": "MIT",
   "scripts": {
     "watch": "parcel watch src/index.scss",
