@@ -55,13 +55,37 @@
     width: 100%;
     min-height: 100%;
   }
+
+  .options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2rem;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 </style>
 
 <div class="split">
   <header>
-    <a href="./kitchen-sink.html">Kitchen Sink</a>&nbsp; | &nbsp; Playground
+    <a href="./index.html">Kitchen Sink</a>&nbsp; | &nbsp; Playground
   </header>
-  <div id="editor"></div>
+  <div id="editor">
+    <!-- <div class="options">
+      <label>
+        Theme
+        <select>
+          <option>System</option>
+          <option>Dark</option>
+          <option>Light</option>
+        </select>
+      </label>
+    </div> -->
+  </div>
   <iframe id="preview"></iframe>
 </div>
 
@@ -71,9 +95,9 @@
   }
 
   const $previewFrame = document.getElementById('preview')
-  const ifrm = $previewFrame.contentWindow || $previewFrame.contentDocument.document || $previewFrame.contentDocument;
+  const frame = $previewFrame.contentWindow || $previewFrame.contentDocument.document || $previewFrame.contentDocument;
 
-  const yadiLink = createLink('../dist/index.css')
+  const yadiLink = createLink('./index.css')
 
   window.onload = function() {
     editor = CodeMirror(document.getElementById("editor"), {
@@ -90,20 +114,17 @@
       value: "<h1>Hello World!</h1>"
     });
 
-    ifrm.document.head.appendChild(yadiLink);
-
     paintPreview()
-
 
     editor.on('change', paintPreview)
   };
 
   function paintPreview() {
-    ifrm.document.open();      
-    ifrm.document.write(editor.getValue())
-    ifrm.document.close();
+    frame.document.open();
+    frame.document.write(editor.getValue())
+    frame.document.head.appendChild(yadiLink);
+    frame.document.close();
   }
-
 
   function createLink(path) {
     let link = document.createElement("link");

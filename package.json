@@ -6,12 +6,16 @@
   "scripts": {
     "watch": "parcel watch src/index.scss",
     "build": "parcel build src/index.scss",
-    "serve": "parcel serve ./examples/kitchen-sink.html --dist-dir ./dev-dist -p 8000",
+    "serve": "parcel serve ./examples/index.html --dist-dir ./dev-dist -p 8000",
     "dev": "concurrently \"yarn run watch\" \"yarn run serve\""
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.7.0",
     "concurrently": "^7.3.0",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "staticFiles": {
+    "staticPath": "dist"
   }
 }
