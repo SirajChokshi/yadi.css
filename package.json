@@ -1,13 +1,14 @@
 {
   "name": "yadi",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "source": "src/index.scss",
   "license": "MIT",
   "scripts": {
     "watch": "parcel watch src/index.scss",
     "build": "parcel build src/index.scss",
     "serve": "parcel serve ./examples/index.html --dist-dir ./dev-dist -p 8000",
-    "dev": "concurrently \"yarn run watch\" \"yarn run serve\""
+    "dev": "concurrently \"yarn run watch\" \"yarn run serve\"",
+    "prepublish": "yarn run build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.7.0",
